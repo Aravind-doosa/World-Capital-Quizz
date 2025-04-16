@@ -13,7 +13,6 @@ const db = new pg.Client({
   password: "Aravind@1",
   port: 5432,
 });
-
 db.connect();
 
 let quiz = [
@@ -30,11 +29,7 @@ db.query("SELECT * FROM capitals", (err, res) => {
   }
   db.end();
 });
-
-
-
 let totalCorrect = 0;
-
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
